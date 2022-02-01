@@ -10,7 +10,7 @@ function getPin() {
         typePin.value = pinNumber;
     }
     else {
-        console.log('this is less then 4');
+        getPin(); 
     }
 }
 
@@ -39,7 +39,8 @@ const submitButton = document.getElementById('pinSubmit').addEventListener('clic
         matchDisplay('block', 'none');
     }
     else {
-        matchDisplay('none','block')
+        matchDisplay('none','block');
+reloadAgain();
     }
 })
 
@@ -47,4 +48,8 @@ const submitButton = document.getElementById('pinSubmit').addEventListener('clic
 function matchDisplay(correctStatus,incorrectStatus) {
     const  correct = document.getElementById('correct').style.display = correctStatus;
     const  incorrect = document.getElementById('incorrect').style.display = incorrectStatus;
+}
+// Reload page
+function reloadAgain() {
+    window.location.reload();
 }
